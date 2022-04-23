@@ -50,6 +50,7 @@ function Card(props) {
               onClick={clicked}
             >
               <Image
+                p="30px"
                 borderRadius="3xl"
                 alt="image"
                 w="full"
@@ -83,7 +84,7 @@ function Card(props) {
           >
             <Box
               h={"210px"}
-              bg={"gray.100"}
+              bg={"white.500"}
               mt={-6}
               mx={-6}
               mb={6}
@@ -91,6 +92,7 @@ function Card(props) {
               onClick={clicked}
             >
               <Image
+                p="30px"
                 borderRadius="lg"
                 alt="image"
                 w="full"
