@@ -23,8 +23,7 @@ function Homepage() {
   }, []);
 
   return (
-    <Container>
-      {/* <img src="./image/rain.png"></img> */}
+    <Container maxW={"100%"} bg={"#E9E7DE"}>
       {info && info.map((post) => <Card key={post.id} {...post} />)}
     </Container>
   );
