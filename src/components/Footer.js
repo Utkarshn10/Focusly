@@ -1,7 +1,11 @@
-import React from "react";
+import {Box} from "@chakra-ui/react";
 
-function Footer() {
-  return <div>Footer</div>;
-}
+const Footer = () => {
+  return (
+    <Box align="center" opacity={0.4} fontSize="sm">
+      &copy; {new Date().getFullYear()} Utkarsh Nagar. All Rights Reserved.
+    </Box>
+  );
+};
 
 export default Footer;
