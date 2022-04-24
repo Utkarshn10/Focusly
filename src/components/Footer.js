@@ -1,12 +1,13 @@
-import {Box, Container} from "@chakra-ui/react";
+import {Box, Container, Link} from "@chakra-ui/react";
 
 const Footer = () => {
   return (
-    <Container>
-      <Box align="center" opacity={0.4} fontSize="sm">
-        &copy; {new Date().getFullYear()} Utkarsh Nagar. All Rights Reserved.
-      </Box>
-    </Container>
+    <Box py={4} align="center" opacity={0.8} fontSize="2xl">
+      Made by{" "}
+      <Link color="teal.500" href="/https://github.com/Utkarshn10">
+        Utkarsh Nagar
+      </Link>
+    </Box>
   );
 };
 

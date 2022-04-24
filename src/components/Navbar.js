@@ -6,8 +6,8 @@ export default function Navbar() {
   const {colorMode, toggleColorMode} = useColorMode();
   return (
     <>
-      <Box bg={"gray.100"} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <Box bg={"gray.100"} px={10}>
+        <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
             <Heading href={"/"}>Focusly</Heading>
           </Box>

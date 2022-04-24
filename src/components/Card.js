@@ -28,21 +28,21 @@ function Card(props) {
   if (!play) {
     return (
       <>
-        <Center py={8} px={4}>
+        <Center py={6} px={4}>
           <Box
-            maxW={"280px"}
+            maxW={"320px"}
+            border="0.5px"
+            borderRadius={"2xl"}
             w="full"
             bg={"white"}
-            rounded={"md"}
             p={6}
             overflow={"hidden"}
             _hover={{
-              boxShadow: "xl",
-              transform: "scale(1.03)",
+              boxShadow: "2xl",
             }}
           >
             <Box
-              h={"210px"}
+              h={"180px"}
               bg={"white.500"}
               mt={-6}
               mx={-6}
@@ -50,10 +50,9 @@ function Card(props) {
               onClick={clicked}
             >
               <Image
-                p="30px"
-                borderRadius="3xl"
+                p="20px"
                 alt="image"
-                w="full"
+                w={"full"}
                 h={"full"}
                 src={props.image}
               />
@@ -71,19 +70,20 @@ function Card(props) {
       <>
         <Center py={8} px={4}>
           <Box
-            maxW={"280px"}
+            maxW={"320px"}
             w="full"
             bg={"white"}
-            boxShadow={"2xl"}
-            rounded={"md"}
+            border={"4px"}
+            borderRadius={"2xl"}
+            borderColor={"teal.500"}
             p={6}
             overflow={"hidden"}
             _hover={{
-              transform: "scale(1.03)",
+              boxShadow: "3xl",
             }}
           >
             <Box
-              h={"210px"}
+              h={"180px"}
               bg={"white.500"}
               mt={-6}
               mx={-6}
@@ -92,8 +92,7 @@ function Card(props) {
               onClick={clicked}
             >
               <Image
-                p="30px"
-                borderRadius="lg"
+                p="20px"
                 alt="image"
                 w="full"
                 h={"full"}
