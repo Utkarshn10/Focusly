@@ -10,10 +10,10 @@ function tabs() {
             <Tab>
               <Link href="/">Nature</Link>
             </Tab>
-            <Tab>
+            {/* <Tab>
               {" "}
               <Link href="/">Game Music</Link>
-            </Tab>
+            </Tab> */}
           </TabList>
         </Tabs>
       </Box>
