@@ -27,7 +27,7 @@ function Card(props) {
 
   if (!play) {
     return (
-      <>
+      <Suspense fallback={renderLoader}>
         <Center py={6} px={4}>
           <Box
             maxW={"320px"}
@@ -63,7 +63,7 @@ function Card(props) {
             </Box>
           </Box>
         </Center>
-      </>
+      </Suspense>
     );
   } else {
     return (
