@@ -1,5 +1,5 @@
 import React from "react";
-import Badge from "./Badge";
+// import Badge from "./Badge";
 import {Box, Flex, Heading, useColorMode} from "@chakra-ui/react";
 
 export default function Navbar() {
@@ -11,9 +11,7 @@ export default function Navbar() {
           <Box>
             <Heading href={"/"}>Focusly</Heading>
           </Box>
-          <Flex alignItems={"center"}>
-            <Badge />
-          </Flex>
+          <Flex alignItems={"center"}></Flex>
         </Flex>
       </Box>
     </>
