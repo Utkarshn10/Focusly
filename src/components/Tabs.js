@@ -1,6 +1,14 @@
 import React from "react";
-import {Tabs, Link, Tab, TabList, Box, Center} from "@chakra-ui/react";
-
+import {
+  Tabs,
+  Tab,
+  TabList,
+  Link,
+  TabPanel,
+  TabPanels,
+  Box,
+  Center,
+} from "@chakra-ui/react";
 function tabs() {
   return (
     <Center>
@@ -8,12 +16,11 @@ function tabs() {
         <Tabs variant="soft-rounded" colorScheme="teal">
           <TabList>
             <Tab>
-              <Link href="/">Nature</Link>
+              <Link href="/">Focus</Link>
             </Tab>
-            {/* <Tab>
-              {" "}
-              <Link href="/">Game Music</Link>
-            </Tab> */}
+            <Tab>
+              <Link href="/Meditate">Meditate</Link>
+            </Tab>
           </TabList>
         </Tabs>
       </Box>
