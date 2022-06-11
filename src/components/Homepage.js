@@ -52,7 +52,7 @@ function Homepage() {
   ]);
 
   return (
-    <Container maxW={"100%"} bg={"#F9F3EE"}>
+    <Container maxW={"100%"} bg={"#EFEAD8"}>
       <Tabs />
       <Box maxW={"100%"}>
         <Center>
