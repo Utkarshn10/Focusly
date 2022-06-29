@@ -33,7 +33,8 @@ Before cloning, please make sure you have already installed follownig:
 
 ## Your Support means a lot
 
-Give a ☆ to the project if this project helped you or you like it.
+
+Give a ⭐ to the project if this project helped you or you like it.
 
 
 
