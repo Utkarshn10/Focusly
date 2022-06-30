@@ -1,9 +1,16 @@
 import React, {useState} from "react";
-import {Box, Center, Container, SimpleGrid} from "@chakra-ui/react";
+import {Box, Center,Heading,Flex, Container, SimpleGrid} from "@chakra-ui/react";
 import Card from "./Card";
 import Tabs from "./Tabs";
 
 function Meditate() {
+  const [newinfo,setnewInfo] = useState([
+    {
+      id: "1",
+      image: "./image/meditate_binaural.png",
+      sound: "./sound/meditate_binaural.mp3",
+    },
+  ])
   const [info, setInfo] = useState([
     {
       id: "1",
@@ -30,12 +37,25 @@ function Meditate() {
   return (
     <Container maxW={"100%"} bg={"#EFEAD8"}>
       <Tabs />
+
       <Box maxW={"100%"}>
+        <Box>
+        <Heading>New</Heading>  
+          <Center>
+          <SimpleGrid columns={[1, 2, 4]}>
+            {newinfo && newinfo.map((post) => <Card key={post.id} {...post} />)}
+          </SimpleGrid>
+          </Center>
+        </Box>
+        <Box>
+        <Heading>For You</Heading>  
+
         <Center>
-          <SimpleGrid columns={[1, 2, 3]}>
+          <SimpleGrid columns={[1, 2, 4]}>
             {info && info.map((post) => <Card key={post.id} {...post} />)}
           </SimpleGrid>
         </Center>
+        </Box>
       </Box>
     </Container>
   );

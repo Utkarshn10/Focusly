@@ -1,8 +1,10 @@
 import React, {useState} from "react";
-import {Box, Center, Container, SimpleGrid} from "@chakra-ui/react";
+import {Box, Center,Flex, Container, Divider, Heading, SimpleGrid} from "@chakra-ui/react";
 import Card from "./Card";
 import Tabs from "./Tabs";
 function Homepage() {
+ 
+
   const [info, setInfo] = useState([
     {
       id: "1",
@@ -49,19 +51,26 @@ function Homepage() {
       image: "./image/keyboard.svg",
       sound: "./sound/keyboard.mp3",
     },
+    {
+      id: "10",
+      image: "./image/brownnoise.png",
+      sound: "./sound/brownnoise.mp3",
+    }
+  
   ]);
 
   return (
     <Container maxW={"100%"} bg={"#EFEAD8"}>
-      <Tabs />
-      <Box maxW={"100%"}>
-        <Center>
-          <SimpleGrid columns={[1, 2, 4]}>
-            {info && info.map((post) => <Card key={post.id} {...post} />)}
-          </SimpleGrid>
-        </Center>
+    <Tabs />
+
+    <Box maxW={"100%"}>
+      <Center>
+        <SimpleGrid columns={[1, 2, 4]}>
+          {info && info.map((post) => <Card key={post.id} {...post} />)}
+        </SimpleGrid>
+      </Center>
       </Box>
-    </Container>
+  </Container>
   );
 }
 
