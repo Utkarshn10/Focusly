@@ -37,6 +37,8 @@ Before cloning, please make sure you have already installed follownig:
 
 Give a ⭐ to the project if this project helped you or you like it.
 
+## Thanks to all Contributors 💪
 
+Thanks a lot for spending your time helping me in this project.
 
-
+[![Contributors](https://contrib.rocks/image?repo=Utkarshn10/Focusly)](https://github.com/Utkarshn10/Focusly/graphs/contributors)
