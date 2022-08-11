@@ -1,13 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import {
   Tabs,
   Tab,
   TabList,
-  Link,
-  TabPanel,
-  TabPanels,
   Box,
   Center,
+
 } from "@chakra-ui/react";
 function tabs() {
   return (
@@ -16,10 +16,10 @@ function tabs() {
         <Tabs variant="soft-rounded" colorScheme="teal">
           <TabList>
             <Tab>
-              <Link href="/">Focus</Link>
+              <NavLink to="/">Focus</NavLink>
             </Tab>
             <Tab>
-              <Link href="/Meditate">Meditate</Link>
+              <NavLink to="/Meditate">Meditate</NavLink>
             </Tab>
           </TabList>
         </Tabs>
