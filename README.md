@@ -15,7 +15,8 @@ Checkout the website here: [Focusly](https://focusly.vercel.app/)
 ## Contributing
 
 - **Thank you** for considering to contribute 
-- Checkout [Contribution Guidelines]() for more information.
+- Feel free to submit feature requests/ UI updates as issues.
+- Checkout [Contribution Guidelines]() for more information. [Coming Soon !]
 
 ## Prerequisites
 
