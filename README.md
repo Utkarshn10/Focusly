@@ -36,7 +36,7 @@ Before cloning, please make sure you have already installed follownig:
 ## Your Support means a lot
 
 
-Give a ⭐ to show your support to the project if this project helped you or you like it.
+Give a ⭐ to show support to the project if this project helped you or you like it.
 
 ## Thanks to all Contributors 💪
 
