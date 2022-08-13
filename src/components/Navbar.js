@@ -9,7 +9,7 @@ export default function Navbar() {
       <Box bg={"gray.100"} px={10}>
         <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Heading href={"/"}>Focusly</Heading>
+            <Heading href={"/"}><a href={"/"}>Focusly</a></Heading>
           </Box>
           <Flex alignItems={"center"}></Flex>
         </Flex>
