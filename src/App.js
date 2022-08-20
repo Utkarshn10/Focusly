@@ -1,23 +1,28 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import {ChakraProvider} from "@chakra-ui/react";
+import {ChakraProvider, Container} from "@chakra-ui/react";
 import Homepage from "./components/Homepage";
 import Meditate from "./components/Meditate";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Tabs from "./components/Tabs";
 
 function App() {
+
   return (
     <div className="App">
       <ChakraProvider>
-        <Navbar />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/Meditate" element={<Meditate />} />
-          </Routes>
-        </BrowserRouter>
-        <Footer />
+      <Container maxW={"100%"} bg={"#EFEAD8"}>
+          <BrowserRouter >
+            <Navbar />
+            <Tabs />
+            <Routes>
+              <Route path="/" element={<Homepage />}/>
+              <Route path="/Meditate" element={<Meditate />} />
+            </Routes>
+          </BrowserRouter>
+          <Footer />
+        </Container>
       </ChakraProvider>
     </div>
   );

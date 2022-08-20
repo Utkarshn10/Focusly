@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import {Box, Center,Flex, Container, Divider, Heading, SimpleGrid} from "@chakra-ui/react";
 import Card from "./Card";
-import Tabs from "./Tabs";
 function Homepage() {
- 
 
+  
   const [info, setInfo] = useState([
     {
       id: "1",
@@ -61,8 +60,6 @@ function Homepage() {
 
   return (
     <Container maxW={"100%"} bg={"#EFEAD8"}>
-    <Tabs />
-
     <Box maxW={"100%"}>
       <Center>
         <SimpleGrid columns={[1, 2, 4]}>
