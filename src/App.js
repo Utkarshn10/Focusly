@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <ChakraProvider>
-      <Container maxW={"100%"} bg={"#EFEAD8"}>
+      <Container maxW={"100%"} bg={"#EFEAD8"} padding={0}>
           <BrowserRouter >
             <Navbar />
             <Tabs />
