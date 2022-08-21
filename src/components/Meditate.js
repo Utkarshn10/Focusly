@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Box, Center,Heading,Flex, Container, SimpleGrid} from "@chakra-ui/react";
 import Card from "./Card";
-import Tabs from "./Tabs";
 
 function Meditate() {
   const [newinfo,setnewInfo] = useState([
@@ -35,9 +34,6 @@ function Meditate() {
   ]);
 
   return (
-    <Container maxW={"100%"} bg={"#EFEAD8"}>
-      <Tabs />
-
       <Box maxW={"100%"}>
         <Box>
         <Heading>New</Heading>  
@@ -57,7 +53,6 @@ function Meditate() {
         </Center>
         </Box>
       </Box>
-    </Container>
   );
 }
 
