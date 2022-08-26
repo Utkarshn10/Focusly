@@ -1,4 +1,4 @@
-import React, {lazy, Suspense, useState} from "react";
+import React, { lazy, Suspense, useState } from "react";
 import {
   Box,
   Slider,
@@ -10,22 +10,32 @@ import {
   Center,
   SliderFilledTrack,
   Spinner,
+  Button
 } from "@chakra-ui/react";
 import Sound from "react-sound";
 
 const renderLoader = () => <Spinner />;
 
+const soundStatus = {
+  playing: false,
+  paused: false
+}
+
 function Card(props) {
-  const [play, setPlay] = useState(false);
+  const [{ playing, paused }, setSoundStatus] = useState(soundStatus);
   const [volume, setVolume] = useState(70);
   const [sliderValue, setSliderValue] = useState(70);
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const clicked = (e) => {
-    setPlay(!play);
+  const handlePlay = () => {
+    setSoundStatus({ ...soundStatus, playing: !playing })
   };
 
-  if (!play) {
+  const handlePause = () => {
+    setSoundStatus({ ...soundStatus, playing: true, paused: !paused })
+  }
+
+  if (!playing) {
     return (
       <Suspense fallback={renderLoader}>
         <Center py={6} px={4}>
@@ -47,7 +57,7 @@ function Card(props) {
               mt={-6}
               mx={-6}
               pos={"relative"}
-              onClick={clicked}
+              onClick={handlePlay}
             >
               <Image
                 p="20px"
@@ -58,7 +68,7 @@ function Card(props) {
               />
               <Sound
                 url={props.sound}
-                playStatus={play ? Sound.status.PLAYING : Sound.status.STOPPED}
+                playStatus={Sound.status.STOPPED}
               />
             </Box>
           </Box>
@@ -89,7 +99,7 @@ function Card(props) {
               mx={-6}
               mb={6}
               pos={"relative"}
-              onClick={clicked}
+              onClick={handlePlay}
             >
               <Image
                 p="20px"
@@ -102,7 +112,7 @@ function Card(props) {
                 url={props.sound}
                 loop={true}
                 volume={volume}
-                playStatus={play ? Sound.status.PLAYING : Sound.status.STOPPED}
+                playStatus={paused ? Sound.status.PAUSED : Sound.status.PLAYING}
               />
             </Box>
             <Slider
@@ -132,6 +142,11 @@ function Card(props) {
                 <SliderThumb />
               </Tooltip>
             </Slider>
+            <Button
+              mt="15px"
+              variant='solid'
+              colorScheme='teal'
+              onClick={handlePause}>{paused ? "Play" : "Pause"}</Button>
           </Box>
         </Center>
       </>
