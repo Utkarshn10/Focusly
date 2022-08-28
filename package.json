@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0"
   }
 }

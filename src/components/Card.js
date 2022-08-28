@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useState } from "react";
+import { BsFillPlayFill, BsPauseFill } from "react-icons/bs"
 import {
   Box,
   Slider,
@@ -10,7 +11,8 @@ import {
   Center,
   SliderFilledTrack,
   Spinner,
-  Button
+  Button,
+  IconButton
 } from "@chakra-ui/react";
 import Sound from "react-sound";
 
@@ -142,11 +144,15 @@ function Card(props) {
                 <SliderThumb />
               </Tooltip>
             </Slider>
-            <Button
+            <IconButton
               mt="15px"
               variant='solid'
               colorScheme='teal'
-              onClick={handlePause}>{paused ? "Play" : "Pause"}</Button>
+              aria-label='Call Sage'
+              fontSize='20px'
+              icon={paused ? <BsFillPlayFill /> : <BsPauseFill />}
+              onClick={handlePause}
+            />
           </Box>
         </Center>
       </>
