@@ -4,14 +4,13 @@ import {
   Box,
   Slider,
   SliderTrack,
-  SliderTrackProps,
   SliderThumb,
   Image,
   Tooltip,
+  Badge,
   Center,
   SliderFilledTrack,
   Spinner,
-  Button,
   IconButton
 } from "@chakra-ui/react";
 import Sound from "react-sound";
@@ -57,6 +56,7 @@ function Card(props) {
               h={"180px"}
               bg={"white.500"}
               mt={-6}
+              p="6"
               mx={-6}
               pos={"relative"}
               onClick={handlePlay}
@@ -68,6 +68,11 @@ function Card(props) {
                 h={"full"}
                 src={props.image}
               />
+              <Box d="flex" alignItems="baseline">
+                  <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                    {props.tag}
+                  </Badge>
+              </Box>
               <Sound
                 url={props.sound}
                 playStatus={Sound.status.STOPPED}
