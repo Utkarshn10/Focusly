@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, {  Suspense, useState, useContext, useRef } from "react";
 import { BsFillPlayFill, BsPauseFill } from "react-icons/bs"
 import {
   Box,
@@ -14,6 +14,7 @@ import {
   IconButton
 } from "@chakra-ui/react";
 import Sound from "react-sound";
+import {MyContext} from "../context"
 
 const renderLoader = () => <Spinner />;
 
@@ -22,7 +23,38 @@ const soundStatus = {
   paused: false
 }
 
-function Card(props) {
+
+const Card =  (props,initialState = 0) => {
+  const {timer, setTimer} = useContext(MyContext);
+  const [isActive, setIsActive] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
+  const countRef = useRef(null)
+
+
+  const handleStart = () => {
+    setIsActive(true)
+    setIsPaused(true)
+    console.log("start")
+    countRef.current = setInterval(() => {
+      setTimer((timer) => timer + 1)
+    }, 1000)
+    console.log("start => ",isPaused)
+  }
+
+  const handlePause = () => {
+    clearInterval(countRef.current)
+    setIsPaused(false)
+    console.log("Pause => ",isPaused)
+  }
+
+  const handleResume = () => {
+    setIsPaused(true)
+    countRef.current = setInterval(() => {
+      setTimer((timer) => timer + 1)
+    }, 1000)
+
+  }
+
   const [{ playing, paused }, setSoundStatus] = useState(soundStatus);
   const [volume, setVolume] = useState(70);
   const [sliderValue, setSliderValue] = useState(70);
@@ -30,10 +62,12 @@ function Card(props) {
 
   const handlePlay = () => {
     setSoundStatus({ ...soundStatus, playing: !playing })
+    !isActive && !isPaused ? handleStart() : handlePause();
   };
 
-  const handlePause = () => {
+  const handlePauseCard = () => {
     setSoundStatus({ ...soundStatus, playing: true, paused: !paused })
+    isPaused ? handlePause() : handleResume();
   }
 
   if (!playing) {
@@ -156,7 +190,7 @@ function Card(props) {
               aria-label='Call Sage'
               fontSize='20px'
               icon={paused ? <BsFillPlayFill /> : <BsPauseFill />}
-              onClick={handlePause}
+              onClick={handlePauseCard}
             />
           </Box>
         </Center>
