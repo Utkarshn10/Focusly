@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Box, Center,Heading,Flex, Container, SimpleGrid} from "@chakra-ui/react";
+import {Box, Center,Heading, SimpleGrid} from "@chakra-ui/react";
 import Card from "./Card";
 
 function Meditate() {

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Box, Center,Flex, Container, Divider, Heading, SimpleGrid} from "@chakra-ui/react";
+import {Box, Center, Container, SimpleGrid} from "@chakra-ui/react";
 import Card from "./Card";
 function Homepage() {
 

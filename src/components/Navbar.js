@@ -1,9 +1,7 @@
 import React from "react";
-// import Badge from "./Badge";
-import {Box, Flex, Heading, useColorMode} from "@chakra-ui/react";
+import {Box, Flex, Heading} from "@chakra-ui/react";
 import Timer from "./Stopwatch/timer";
 export default function Navbar() {
-  const {colorMode, toggleColorMode} = useColorMode();
   return (
     <>
       <Box bg={"gray.100"} px={10}>
