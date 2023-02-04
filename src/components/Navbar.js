@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Flex, Heading} from "@chakra-ui/react";
+import {Box, Flex, Heading,Link} from "@chakra-ui/react";
 import Timer from "./Stopwatch/timer";
 export default function Navbar() {
   return (
@@ -7,7 +7,9 @@ export default function Navbar() {
       <Box bg={"gray.100"} px={10}>
         <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Heading href={"/"}>Focusly</Heading>
+            <Heading>
+              <Link  href={"https://focusly.vercel.app/"}>Focusly</Link>
+            </Heading>
           </Box>
           <Flex alignItems={"center"}></Flex>
           <Box>

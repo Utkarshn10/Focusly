@@ -10,7 +10,7 @@ const useTimer = (initialState = 0) => {
   const handleStart = () => {
     setIsActive(true)
     setIsPaused(true)
-    console.log("start")
+    // console.log("start")
     countRef.current = setInterval(() => {
       setTimer((timer) => timer + 1)
     }, 1000)
