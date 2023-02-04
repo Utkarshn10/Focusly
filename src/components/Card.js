@@ -34,17 +34,17 @@ const Card =  (props,initialState = 0) => {
   const handleStart = () => {
     setIsActive(true)
     setIsPaused(true)
-    console.log("start")
+    // console.log("start")
     countRef.current = setInterval(() => {
       setTimer((timer) => timer + 1)
     }, 1000)
-    console.log("start => ",isPaused)
+    // console.log("start => ",isPaused)
   }
 
   const handlePause = () => {
     clearInterval(countRef.current)
     setIsPaused(false)
-    console.log("Pause => ",isPaused)
+    // console.log("Pause => ",isPaused)
   }
 
   const handleResume = () => {
