@@ -16,10 +16,13 @@ function tabs() {
         <Tabs variant="soft-rounded" colorScheme="teal">
           <TabList>
             <Tab>
-              <NavLink to="/">Focus</NavLink>
+              <NavLink to="/">Study and Work</NavLink>
             </Tab>
             <Tab>
               <NavLink to="/Meditate">Meditate</NavLink>
+            </Tab>
+            <Tab>
+              <NavLink to="/Lofi">Lofi</NavLink>
             </Tab>
           </TabList>
         </Tabs>
