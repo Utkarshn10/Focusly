@@ -139,6 +139,7 @@ const Card =  (props,initialState = 0) => {
               mt={-6}
               mx={-6}
               mb={6}
+              p={6}
               pos={"relative"}
               onClick={handlePlay}
             >
@@ -149,6 +150,11 @@ const Card =  (props,initialState = 0) => {
                 h={"full"}
                 src={props.image}
               />
+              <Box d="flex" alignItems="baseline">
+                  <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                    {props.tag}
+                  </Badge>
+              </Box>
               <Sound
                 url={props.sound}
                 loop={true}
