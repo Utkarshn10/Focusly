@@ -19,6 +19,9 @@ function tabs() {
               <NavLink to="/">Work</NavLink>
             </Tab>
             <Tab>
+              <NavLink to="/Lofi">Lo-fi</NavLink>
+            </Tab>
+            <Tab>
               <NavLink to="/Meditate">Meditate</NavLink>
             </Tab>
           </TabList>
