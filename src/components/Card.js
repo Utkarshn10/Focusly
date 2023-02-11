@@ -14,7 +14,9 @@ import {
   IconButton
 } from "@chakra-ui/react";
 import Sound from "react-sound";
+import ReactAudioPlayer from "react-audio-player";
 import {MyContext} from "../context"
+
 
 const renderLoader = () => <Spinner />;
 
@@ -107,9 +109,10 @@ const Card =  (props,initialState = 0) => {
                     {props.tag}
                   </Badge>
               </Box>
-              <Sound
-                url={props.sound}
-                playStatus={Sound.status.STOPPED}
+              <ReactAudioPlayer
+                src={props.sound}
+                onCanPlay={() => setSoundStatus({ ...soundStatus, playing: true })}
+                // playStatus={Sound.status.STOPPED}
               />
             </Box>
           </Box>
@@ -155,11 +158,12 @@ const Card =  (props,initialState = 0) => {
                     {props.tag}
                   </Badge>
               </Box>
-              <Sound
-                url={props.sound}
+              <ReactAudioPlayer
+                src={props.sound}
                 loop={true}
                 volume={volume}
-                playStatus={paused ? Sound.status.PAUSED : Sound.status.PLAYING}
+                onPlay={() => setSoundStatus({ ...soundStatus, playing: true })}
+                onPause={() => setSoundStatus({ ...soundStatus, paused: true })}
               />
             </Box>
             <Slider
