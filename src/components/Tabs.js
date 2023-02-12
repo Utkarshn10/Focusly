@@ -9,7 +9,7 @@ import {
   Center,
 
 } from "@chakra-ui/react";
-function tabs() {
+function TabPanel() {
   return (
     <Center>
       <Box py={4}>
@@ -20,6 +20,7 @@ function tabs() {
             </Tab>
             <Tab>
               <NavLink to="/Lofi">Lo-fi</NavLink>
+
             </Tab>
             <Tab>
               <NavLink to="/Meditate">Meditate</NavLink>
@@ -31,4 +32,4 @@ function tabs() {
   );
 }
 
-export default tabs;
+export default TabPanel;
