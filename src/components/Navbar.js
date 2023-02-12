@@ -1,6 +1,8 @@
 import React from "react";
 import {Box, Flex, Heading,Link} from "@chakra-ui/react";
+import NavLink from "react-router-dom";
 import Timer from "./Stopwatch/timer";
+import TabPanel from "./Tabs";
 export default function Navbar() {
   return (
     <>
@@ -11,7 +13,9 @@ export default function Navbar() {
               <Link  href={"https://focusly.vercel.app/"}>Focusly</Link>
             </Heading>
           </Box>
-          <Flex alignItems={"center"}></Flex>
+          <Flex alignItems={"center"}>
+            <TabPanel />
+          </Flex>
           <Box>
             <Timer />
           </Box>
