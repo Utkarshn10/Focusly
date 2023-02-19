@@ -52,7 +52,7 @@ export default function Lofi() {
     return (
         <Box maxW={"100%"}>
                 <Center>
-                    <SimpleGrid columns={[1, 2, 4]}>
+                    <SimpleGrid columns={[1, 2, 3]}>
                         {info && info.map((post) => <Card key={post.id} {...post} />)}
                     </SimpleGrid>
                 </Center>
