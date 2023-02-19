@@ -40,6 +40,13 @@ export default function Lofi() {
             sound: "./sound/Lofi-sleepy-cat.mp3",
             tag: "Lofi Sleepy Cat"
         },
+        {
+
+            id: "7",
+            image: "./image/spring-lofi.jpeg",
+            sound: "./sound/spring-of-mind.mp3",
+            tag: "Spring Mind"
+        }
       ])
 
     return (
