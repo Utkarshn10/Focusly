@@ -6,7 +6,7 @@ function Meditate() {
   const [newinfo,setnewInfo] = useState([
     {
       id: "1",
-      image: "./image/meditate_binaural.png",
+      image: "./image/meditate_binaural.webp",
       sound: "./sound/meditate_binaural.mp3",
       tag: "NEW"
     },
@@ -14,25 +14,25 @@ function Meditate() {
   const [info, setInfo] = useState([
     {
       id: "1",
-      image: "./image/meditate3.png",
+      image: "./image/meditate3.webp",
       sound: "./sound/meditation.mp3",
       tag: "Nature"
     },
     {
       id: "2",
-      image: "./image/meditate_lotus.svg",
+      image: "./image/meditate_lotus.webp",
       sound: "./sound/meditate_mind.mp3",
       tag: "Lotus",
     },
     {
       id: "3",
-      image: "./image/meditate_mountain.png",
+      image: "./image/meditate_mountain.webp",
       sound: "./sound/meditate_mountain.mp3",
       tag: "Mountain",
     },
     {
       id: "4",
-      image: "./image/om.png",
+      image: "./image/om.webp",
       sound: "./sound/meditate_om.mp3",
       tag: "Om Chanting"
     },
