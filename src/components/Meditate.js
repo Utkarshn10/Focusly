@@ -10,6 +10,12 @@ function Meditate() {
       sound: "./sound/meditate_binaural.mp3",
       tag: "NEW"
     },
+    {
+      id: "2",
+      image: "./image/zen_meditation.webp",
+      sound: "./sound/zen_meditation.mp3",
+      tag: "ZEN"
+    }
   ])
   const [info, setInfo] = useState([
     {
