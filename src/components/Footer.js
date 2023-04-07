@@ -1,14 +1,20 @@
-import { Box, Container, Link } from "@chakra-ui/react";
+import { Box, Container, Grid, Link } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
     <Container maxW={"100%"} bg={"#f7f7f7"}  borderBottomWidth='6px' borderColor='teal'>
-      <Box py={4} align="center" opacity={0.8} fontSize="2xl">
-      🎯 Built by Team{" "}
+    
+    <Grid templateColumns="1fr auto" gap={4} alignItems="center"  p={4}>
+      <Box opacity={0.8} fontSize="2xl" justifySelf="middle">
+        🎯 Built by Team{" "}
         <Link color="teal.500" href="https://github.com/Utkarshn10/Focusly">
           Focusly
         </Link>
       </Box>
+
+
+      <Link justifySelf="end" border borderRadius='6px' href="https://github.com/sponsors/Utkarshn10">Support Focusly</Link>
+    </Grid>
     </Container>
   );
 };
