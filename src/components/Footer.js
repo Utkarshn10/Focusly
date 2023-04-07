@@ -13,7 +13,7 @@ const Footer = () => {
       </Box>
 
 
-      <Link justifySelf="end" border borderRadius='6px' href="https://github.com/sponsors/Utkarshn10">Support Focusly</Link>
+      <Link justifySelf="end" borderWidth='2px' borderColor='teal' py={2} px={2} borderRadius='6px' href="https://github.com/sponsors/Utkarshn10">Support Focusly</Link>
     </Grid>
     </Container>
   );
