@@ -3,8 +3,6 @@ import { formatTime } from '../utils';
 import {Box,Text} from "@chakra-ui/react";
 import { MyContext } from '../../context';
 
-
-
 const Timer = () => {
   const {timer}  = useContext(MyContext);
   
