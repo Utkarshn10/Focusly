@@ -3,6 +3,8 @@ import { formatTime } from '../utils';
 import {Box,Text} from "@chakra-ui/react";
 import { MyContext } from '../../context';
 
+
+
 const Timer = () => {
   const {timer}  = useContext(MyContext);
   
@@ -12,7 +14,7 @@ const Timer = () => {
         <Box fontSize='sm'>
           Focused Time
         </Box>
-        <Text  fontSize='xl' fontWeight="semibold">{formatTime(timer)}</Text>
+        <Text  fontSize={{ base: '15', sm: '22'}} fontWeight="semibold">{formatTime(timer)}</Text>
       </Box>
     </div>
   );
