@@ -12,7 +12,7 @@ const Timer = () => {
         <Box fontSize='sm'>
           Focused Time
         </Box>
-        <Text  fontSize={{ base: '15', sm: '22'}} fontWeight="semibold">{formatTime(timer)}</Text>
+        <Text  fontSize="17" fontWeight="semibold">{formatTime(timer)}</Text>
       </Box>
     </div>
   );
