@@ -11,7 +11,7 @@ export default function Navbar() {
           <Box>
             <Heading>
               <Link href="https://focusly.vercel.app/">
-                <Image src="../Focusly Logo.webp" py={2} boxSize='70px'  maxW="100px" borderRadius='half' alt="Focusly logo"/>
+                <Image src="../Focusly_logo-bg-removed.png" py={2} boxSize='70px'  maxW="100px" borderRadius='half' alt="Focusly logo"/>
               </Link>
             </Heading>
           </Box>
