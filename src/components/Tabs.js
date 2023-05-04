@@ -1,20 +1,23 @@
 import React from "react";
+import { useTheme } from "@emotion/react";
 import { NavLink } from "react-router-dom";
 import { Tabs, Tab, TabList, Box, Center } from "@chakra-ui/react";
 
 function TabPanel() {
+  const theme = useTheme();
+
   return (
     <Center>
       <Box py={4}>
-        <Tabs className="tabs" variant="soft-rounded" colorScheme="teal">
+        <Tabs variant="soft-rounded" colorScheme="teal">
           <TabList>
-            <Tab>
+            <Tab borderRadius={theme.radii.lg}>
               <NavLink to="/">Work</NavLink>
             </Tab>
-            <Tab>
+            <Tab borderRadius={theme.radii.lg}>
               <NavLink to="/Lofi">Lo-fi</NavLink>
             </Tab>
-            <Tab>
+            <Tab borderRadius={theme.radii.lg}>
               <NavLink to="/Meditate">Meditate</NavLink>
             </Tab>
           </TabList>
