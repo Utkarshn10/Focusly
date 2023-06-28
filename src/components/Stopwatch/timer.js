@@ -8,7 +8,7 @@ const Timer = () => {
   
   return (
     <div className="app">
-      <Box maxW='sm' borderColor='teal' p='1' color='black.400' borderWidth='2px' borderRadius='md' fontSize='lg' mt='2'>
+      <Box maxW='sm' p='1' color='white'  fontSize='lg' mt='2'>
         <Box fontSize='sm'>
           Focused Time
         </Box>

@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.app {
+  margin: 2px;
+  margin-right: 7px;
+  background:
+  linear-gradient(45deg, rgb(25, 177, 204) 12%, rgb(15, 253, 190)) 54% border-box;
+  border: 3px solid transparent;
+  border-radius: 12px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
