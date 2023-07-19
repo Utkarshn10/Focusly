@@ -1,5 +1,5 @@
 import React, {  Suspense, useState, useContext, useRef } from "react";
-import { BsFillPlayFill, BsPauseFill, BsTwitter, BsReddit, BsFacebook  } from "react-icons/bs"
+import { BsFillPlayFill, BsPauseFill, BsTwitter, BsReddit, BsFacebook, BsShareFill  } from "react-icons/bs"
 import {
   Box,
   Slider,
@@ -216,11 +216,12 @@ const Card =  (props,initialState = 0) => {
       variant='solid'
       colorScheme='teal'
       aria-label='Call Sage'
-      fontSize='18px' 
+      fontSize='16px' 
+      rightIcon={<BsShareFill />}
       isActive={isOpen} as={Button}>
-        {isOpen ? 'Close' : 'Share'}
+      {isOpen ? "Close" : "Share "} 
       </MenuButton>
-      <MenuList fontSize="20px">
+      <MenuList fontSize="17px">
           <MenuItem as='a' 
           href={`https://twitter.com/intent/tweet?text=Listening to ${props.tag} on the Focusly app helps makes focusing on work much easier. Let's listen to ${props.tag} together. https://focusly.vercel.app/`}>
           <BsTwitter /> &nbsp; Tweet about it 
