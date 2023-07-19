@@ -5,7 +5,7 @@ const Footer = () => {
     <Container maxW={"100%"} bg={"#f7f7f7"}  borderBottomWidth='6px' borderColor='teal'>
     
     <Grid templateColumns="1fr auto" gap={4} alignItems="center"  p={4}>
-      <Box opacity={0.8} fontSize="2xl" justifySelf="middle">
+      <Box opacity={0.8} fontSize="2xl" justifySelf="middle"  ms={{base: 0 , md: "150px" , lg: "150px"}}>
         🎯 Built by Team{" "}
         <Link color="teal.500" href="https://github.com/Utkarshn10/Focusly">
           Focusly
