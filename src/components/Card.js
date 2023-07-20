@@ -217,7 +217,7 @@ const Card =  (props,initialState = 0) => {
       colorScheme='teal'
       aria-label='Call Sage'
       fontSize='16px' 
-      rightIcon={<BsShareFill />}
+      rightIcon={isOpen ? "" : <BsShareFill />}
       isActive={isOpen} as={Button}>
       {isOpen ? "Close" : "Share "} 
       </MenuButton>
