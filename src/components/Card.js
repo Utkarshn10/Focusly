@@ -1,5 +1,5 @@
 import React, {  Suspense, useState, useContext, useRef } from "react";
-import { BsFillPlayFill, BsPauseFill } from "react-icons/bs"
+import { BsFillPlayFill, BsPauseFill, BsTwitter, BsReddit, BsFacebook, BsShareFill  } from "react-icons/bs"
 import {
   Box,
   Slider,
@@ -11,7 +11,16 @@ import {
   Center,
   SliderFilledTrack,
   Spinner,
-  IconButton
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+  Button,
 } from "@chakra-ui/react";
 import Sound from "react-sound";
 import {MyContext} from "../context"
@@ -198,6 +207,37 @@ const Card =  (props,initialState = 0) => {
               icon={paused ? <BsFillPlayFill /> : <BsPauseFill />}
               onClick={handlePauseCard}
             />
+            <Menu>
+      {({ isOpen }) => (
+    <>
+      <MenuButton 
+      mt="15px"
+      ms={2}
+      variant='solid'
+      colorScheme='teal'
+      aria-label='Call Sage'
+      fontSize='16px' 
+      rightIcon={isOpen ? "" : <BsShareFill />}
+      isActive={isOpen} as={Button}>
+      {isOpen ? "Close" : "Share "} 
+      </MenuButton>
+      <MenuList fontSize="17px">
+          <MenuItem as='a' 
+          href={`https://twitter.com/intent/tweet?text=Listening to ${props.tag} on the Focusly app helps makes focusing on work much easier. Let's listen to ${props.tag} together. https://focusly.vercel.app/`}>
+          <BsTwitter /> &nbsp; Tweet about it 
+          </MenuItem>
+          <MenuItem as='a'
+         href={`https://www.reddit.com/submit?post&text=Listening to ${props.tag} on the Focusly app helps makes focusing on work much easier. Let's listen to ${props.tag} together. https://focusly.vercel.app/`}>
+        <BsReddit/> &nbsp; Post on Reddit 
+          </MenuItem>
+          <MenuItem as='a'
+         href='www.facebook.com/sharer.php?u=https://focusly.vercel.app/'>
+         <BsFacebook/> &nbsp; Share on Facebook 
+          </MenuItem>
+      </MenuList>
+    </>
+      )}
+</Menu>
           </Box>
         </Center>
       </>
