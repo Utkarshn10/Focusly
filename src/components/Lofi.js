@@ -46,6 +46,12 @@ export default function Lofi() {
             image: "./image/spring-lofi.jpeg",
             sound: "./sound/spring-of-mind.mp3",
             tag: "Spring Mind"
+        },
+        {
+            id: "8",
+            image: "./image/Lofi-chilling-vibe.jpeg",
+            sound: "./sound/Lofi-chill-vibes.mp3",
+            tag: "Chilling Vibe"
         }
       ])
 
