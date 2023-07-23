@@ -9,6 +9,7 @@ import Lofi from "./components/Lofi";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Tabs from "./components/Tabs";
 import Appcontext from "./context";
+import LandingPage from "./landing-page"
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
               <Route path="/" element={<Homepage />}/>
               <Route path="/Meditate" element={<Meditate />} />
               <Route path="/Lofi" element={<Lofi />} />
+              <Route path="/Home" element={<LandingPage />} />
             </Routes>
           </BrowserRouter>
           <Footer />
