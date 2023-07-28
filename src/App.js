@@ -1,5 +1,5 @@
 import "./App.css";
-import {createContext } from "react"
+import {createContext, useEffect, useState } from "react"
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {ChakraProvider, Container} from "@chakra-ui/react";
@@ -10,7 +10,10 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Tabs from "./components/Tabs";
 import Appcontext from "./context";
 
+
 function App() {
+  
+ 
 
   return (
     <Appcontext>
