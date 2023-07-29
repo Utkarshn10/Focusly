@@ -6,7 +6,7 @@
 
 
 ## Demo
-Checkout the website here: [Focusly](https://focusly.vercel.app/)
+Checkout the website here: **[Focusly](https://focusly.vercel.app/)**
 
 ## Tech Used
 
