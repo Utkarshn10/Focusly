@@ -9,6 +9,7 @@ This documentation contains a set of guidelines to help you during the contribut
 ## Find an issue
 
 - Take a look at the existing issues or create you own issues.
+- If you want to work on an issue and someone else is not working on it, comment that you would like to contribute to it. 
 
 ## Fork the Project
 
