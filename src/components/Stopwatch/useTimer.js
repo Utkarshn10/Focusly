@@ -1,8 +1,8 @@
-import { useState, useRef,useContext } from 'react';
-import {MyContext} from "../../context"
+import { useState, useRef, useContext } from 'react';
+import { MyContext } from "../../context";
 
-const useTimer = (initialState = 0) => {
-  const {timer, setTimer} = useContext(MyContext);
+const useTimer = (initialState = 0, onTimerExpired) => {
+  const { timer, setTimer } = useContext(MyContext);
   const [isActive, setIsActive] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const countRef = useRef(null)
@@ -35,7 +35,14 @@ const useTimer = (initialState = 0) => {
     setTimer(0)
   }
 
+  // Call the callback function when the timer expires
+  useEffect(() => {
+    if (timer === initialState) {
+      onTimerExpired();
+    }
+  }, [timer, initialState, onTimerExpired]);
+
   return { timer, isActive, isPaused, handleStart, handlePause, handleResume, handleReset }
 }
 
-export default useTimer
+export default useTimer;
