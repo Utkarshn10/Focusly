@@ -10,7 +10,7 @@ const Timer = ({ isActive }) => {
     <div className="app">
       <Box maxW='sm' borderColor='teal' p='1' color='black.400' borderWidth='1px' borderRadius='sm' fontSize='lg' mt='0'>
         <Box fontSize='sm'>
-          Time You've Focused
+          Focused Time
         </Box>
         <Text fontSize="17" fontWeight="semibold">{formatTime(timer)}</Text>
       </Box>
