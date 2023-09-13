@@ -1,4 +1,6 @@
-# Focusly
+<!-- markdownlint-disable MD003 -->
+<h1 align="center">Focusly</h1>
+<!-- markdownlint-enable MD003 -->
 
 
 ## Contribute directly using Gitpod
