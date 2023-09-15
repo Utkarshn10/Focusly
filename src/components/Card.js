@@ -1,5 +1,12 @@
-import React, {  Suspense, useState, useContext, useRef } from "react";
-import { BsFillPlayFill, BsPauseFill, BsTwitter, BsReddit, BsFacebook, BsShareFill  } from "react-icons/bs"
+import React, { Suspense, useState, useContext, useRef } from "react";
+import {
+  BsFillPlayFill,
+  BsPauseFill,
+  BsTwitter,
+  BsReddit,
+  BsFacebook,
+  BsShareFill,
+} from "react-icons/bs";
 import {
   Box,
   Slider,
@@ -23,46 +30,43 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Sound from "react-sound";
-import {MyContext} from "../context"
+import { MyContext } from "../context";
 
 const renderLoader = () => <Spinner />;
 
 const soundStatus = {
   playing: false,
-  paused: false
-}
+  paused: false,
+};
 
-
-const Card =  (props,initialState = 0) => {
-  const {timer, setTimer} = useContext(MyContext);
-  const [isActive, setIsActive] = useState(false)
-  const [isPaused, setIsPaused] = useState(false)
-  const countRef = useRef(null)
-
+const Card = (props, initialState = 0) => {
+  const { timer, setTimer } = useContext(MyContext);
+  const [isActive, setIsActive] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const countRef = useRef(null);
 
   const handleStart = () => {
-    setIsActive(true)
-    setIsPaused(true)
-    if(timer === 0){
+    setIsActive(true);
+    setIsPaused(true);
+    if (timer === 0) {
       countRef.current = setInterval(() => {
-        setTimer((timer) => timer + 1)
-      }, 1000)
+        setTimer((timer) => timer + 1);
+      }, 1000);
     }
-  }
+  };
 
   const handlePause = () => {
-    clearInterval(countRef.current)
-    setIsPaused(false)
+    clearInterval(countRef.current);
+    setIsPaused(false);
     // console.log("Pause => ",isPaused)
-  }
+  };
 
   const handleResume = () => {
-    setIsPaused(true)
+    setIsPaused(true);
     countRef.current = setInterval(() => {
-      setTimer((timer) => timer + 1)
-    }, 1000)
-
-  }
+      setTimer((timer) => timer + 1);
+    }, 1000);
+  };
 
   const [{ playing, paused }, setSoundStatus] = useState(soundStatus);
   const [volume, setVolume] = useState(70);
@@ -70,14 +74,14 @@ const Card =  (props,initialState = 0) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const handlePlay = () => {
-    setSoundStatus({ ...soundStatus, playing: !playing })
+    setSoundStatus({ ...soundStatus, playing: !playing });
     !isActive && !isPaused ? handleStart() : handlePause();
   };
 
   const handlePauseCard = () => {
-    setSoundStatus({ ...soundStatus, playing: true, paused: !paused })
+    setSoundStatus({ ...soundStatus, playing: true, paused: !paused });
     isPaused ? handlePause() : handleResume();
-  }
+  };
 
   if (!playing) {
     return (
@@ -112,14 +116,11 @@ const Card =  (props,initialState = 0) => {
                 src={props.image}
               />
               <Box d="flex" alignItems="baseline">
-                  <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-                    {props.tag}
-                  </Badge>
+                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                  {props.tag}
+                </Badge>
               </Box>
-              <Sound
-                url={props.sound}
-                playStatus={Sound.status.STOPPED}
-              />
+              <Sound url={props.sound} playStatus={Sound.status.STOPPED} />
             </Box>
           </Box>
         </Center>
@@ -160,9 +161,9 @@ const Card =  (props,initialState = 0) => {
                 src={props.image}
               />
               <Box d="flex" alignItems="baseline">
-                  <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-                    {props.tag}
-                  </Badge>
+                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                  {props.tag}
+                </Badge>
               </Box>
               <Sound
                 url={props.sound}
@@ -200,49 +201,57 @@ const Card =  (props,initialState = 0) => {
             </Slider>
             <IconButton
               mt="15px"
-              variant='solid'
-              colorScheme='teal'
-              aria-label='Call Sage'
-              fontSize='20px'
+              variant="solid"
+              colorScheme="teal"
+              aria-label="Call Sage"
+              fontSize="20px"
               icon={paused ? <BsFillPlayFill /> : <BsPauseFill />}
               onClick={handlePauseCard}
             />
             <Menu>
-      {({ isOpen }) => (
-    <>
-      <MenuButton 
-      mt="15px"
-      ms={2}
-      variant='solid'
-      colorScheme='teal'
-      aria-label='Call Sage'
-      fontSize='16px' 
-      rightIcon={isOpen ? "" : <BsShareFill />}
-      isActive={isOpen} as={Button}>
-      {isOpen ? "Close" : "Share "} 
-      </MenuButton>
-      <MenuList fontSize="17px">
-          <MenuItem as='a' 
-          href={`https://twitter.com/intent/tweet?text=Listening to ${props.tag} on the Focusly app helps makes focusing on work much easier. Let's listen to ${props.tag} together. https://focusly.vercel.app/`}>
-          <BsTwitter /> &nbsp; Tweet about it 
-          </MenuItem>
-          <MenuItem as='a'
-         href={`https://www.reddit.com/submit?post&text=Listening to ${props.tag} on the Focusly app helps makes focusing on work much easier. Let's listen to ${props.tag} together. https://focusly.vercel.app/`}>
-        <BsReddit/> &nbsp; Post on Reddit 
-          </MenuItem>
-          <MenuItem as='a'
-         href='www.facebook.com/sharer.php?u=https://focusly.vercel.app/'>
-         <BsFacebook/> &nbsp; Share on Facebook 
-          </MenuItem>
-      </MenuList>
-    </>
-      )}
-</Menu>
+              {({ isOpen }) => (
+                <>
+                  <MenuButton
+                    mt="15px"
+                    ms={2}
+                    variant="solid"
+                    colorScheme="teal"
+                    aria-label="Call Sage"
+                    fontSize="16px"
+                    rightIcon={isOpen ? "" : <BsShareFill />}
+                    isActive={isOpen}
+                    as={Button}
+                  >
+                    {isOpen ? "Close" : "Share "}
+                  </MenuButton>
+                  <MenuList fontSize="17px">
+                    <MenuItem
+                      as="a"
+                      href={`https://twitter.com/intent/tweet?text=Listening to ${props.tag} on the Focusly app helps makes focusing on work much easier. Let's listen to ${props.tag} together. https://focusly.vercel.app/`}
+                    >
+                      <BsTwitter /> &nbsp; Tweet about it
+                    </MenuItem>
+                    <MenuItem
+                      as="a"
+                      href={`https://www.reddit.com/submit?post&text=Listening to ${props.tag} on the Focusly app helps makes focusing on work much easier. Let's listen to ${props.tag} together. https://focusly.vercel.app/`}
+                    >
+                      <BsReddit /> &nbsp; Post on Reddit
+                    </MenuItem>
+                    <MenuItem
+                      as="a"
+                      href="www.facebook.com/sharer.php?u=https://focusly.vercel.app/"
+                    >
+                      <BsFacebook /> &nbsp; Share on Facebook
+                    </MenuItem>
+                  </MenuList>
+                </>
+              )}
+            </Menu>
           </Box>
         </Center>
       </>
     );
   }
-}
+};
 
 export default Card;
