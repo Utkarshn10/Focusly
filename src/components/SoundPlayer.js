@@ -1,58 +1,60 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import useTimer from "./useTimer";
 import Timer from "./Timer";
 
 function SoundPlayer() {
   const [soundPlaying, setSoundPlaying] = useState(false);
-  const audioRef = useRef(null);
+  const [activeAudioIndex, setActiveAudioIndex] = useState(-1);
+  const audioRefs = useRef([]);
+  const timers = useRef([]);
 
-  const handlePlaySound = () => {
-    // Check if the audio is already playing
+  const handlePlaySound = (index) => {
     if (!soundPlaying) {
-      // Start playing the sound
-      audioRef.current.play();
-
-      // Start the timer
-      timer.handleStart();
-
-      // Set soundPlaying to true
+      audioRefs.current[index].play();
+      timers.current[index].handleStart();
+      setActiveAudioIndex(index);
       setSoundPlaying(true);
     }
   };
 
-  const handleStopSound = () => {
-    // Check if the audio is playing
-    if (soundPlaying) {
-      // Stop playing the sound
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0; // Reset the audio to the beginning
-
-      // Reset the timer
-      timer.handleReset();
-
-      // Set soundPlaying to false
+  const handleStopSound = (index) => {
+    if (soundPlaying && activeAudioIndex === index) {
+      audioRefs.current[index].pause();
+      audioRefs.current[index].currentTime = 0;
+      timers.current[index].handleReset();
+      setActiveAudioIndex(-1);
       setSoundPlaying(false);
     }
   };
 
-  const handleTimerExpired = () => {
-    // Stop the sound when the timer expires
-    if (soundPlaying) {
-      handleStopSound();
+  const handleTimerExpired = (index) => {
+    if (soundPlaying && activeAudioIndex === index) {
+      handleStopSound(index);
     }
   };
 
-  const timer = useTimer(0, handleTimerExpired);
+  const addAudioRef = (ref) => {
+    audioRefs.current.push(ref);
+  };
+
+  const addTimer = () => {
+    timers.current.push(useTimer(0, () => handleTimerExpired(timers.current.length)));
+  };
 
   return (
     <div>
-      <button onClick={handlePlaySound}>Play Sound</button>
-      <button onClick={handleStopSound}>Stop Sound</button>
-      <Timer isActive={timer.isActive} />
-      <audio ref={audioRef}>
-        <source src="your-audio-file.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      <button onClick={() => addAudioRef(audioRefs.current.length)}>Add Sound</button>
+      {audioRefs.current.map((_, index) => (
+        <div key={index}>
+          <button onClick={() => handlePlaySound(index)}>Play Sound {index + 1}</button>
+          <button onClick={() => handleStopSound(index)}>Stop Sound {index + 1}</button>
+          <Timer isActive={timers.current[index].isActive} />
+          <audio ref={(ref) => addAudioRef(ref)}>
+            <source src={`your-audio-file-${index}.mp3`} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      ))}
     </div>
   );
 }
