@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Link } from "@chakra-ui/react";
 import { PopupButton } from '@typeform/embed-react'
-import { useEffect, useState } from "react";
 
 const Footer = () => {
   const buttonStyle = {
@@ -22,13 +21,13 @@ const Footer = () => {
             Focusly
           </Link>
         </Box>
-        <PopupButton
+        {/* <PopupButton
           id="pmedcZ7N"
           style={buttonStyle}
           size={66}
         >
           <span style={{ marginLeft: 10 }}>🌱 Give Your Valuable Feedback</span>
-        </PopupButton>
+        </PopupButton> */}
         {/* <Link justifySelf="end" borderWidth='2px' borderColor='teal' py={2} px={2} borderRadius='6px' href="https://github.com/sponsors/Utkarshn10">Support Focusly</Link> */}
       </Grid>
     </Container>

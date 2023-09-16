@@ -1,41 +1,51 @@
 import React from "react";
-import {Box, Flex, Heading,Link, Show} from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, Image, useBreakpointValue } from "@chakra-ui/react";
 import Timer from "./Stopwatch/timer";
 import TabPanel from "./Tabs";
-import { Image } from "@chakra-ui/react";
+
 export default function Navbar() {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
-    <>
-    <Box pos="fixed" zIndex={10} w="100%" bg={"gray.100"} px={10} borderTopWidth="6px" borderColor='teal'>
-        <Flex h={20} alignItems={"center"} justifyContent={"space-around"}>
-          <Box>
-            <Heading>
-              <Link href="https://focusly.vercel.app/">
-                <Image src="../Focusly_logo-bg-removed.png" py={2} boxSize='70px'  maxW="100px" borderRadius='half' alt="Focusly logo"/>
-              </Link>
-            </Heading>
-          </Box>
+    <Box
+      pos="fixed"
+      zIndex={10}
+      w="100%"
+      bg={"gray.100"}
+      px={4}
+      py={2}
+      borderTopWidth="6px"
+      borderColor="teal"
+    >
+      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Box>
+          <Heading>
+            <Link href="https://focusly.vercel.app/">
+              <Image
+                src="../Focusly_logo-bg-removed.png"
+                boxSize={isMobile ? "50px" : "70px"}
+                maxW={isMobile ? "80px" : "100px"}
+                borderRadius="full"
+                alt="Focusly logo"
+              />
+            </Link>
+          </Heading>
+        </Box>
+        {!isMobile && (
           <Flex alignItems={"center"}>
-
-          <Show breakpoint='(min-width: 500px)'>
             <TabPanel />
-</Show>
-         
-         
           </Flex>
-          <Box>
-            <Timer />
-          </Box>
-        </Flex>
+        )}
+        <Box>
+          <Timer />
+        </Box>
+      </Flex>
 
-        <Show breakpoint='(max-width: 500px)'>
+      {isMobile && (
         <Flex alignItems={"center"} justifyContent={"center"}>
-            <TabPanel />
-            </Flex>
-
-          </Show>
-         
-      </Box>
-    </>
+          <TabPanel />
+        </Flex>
+      )}
+    </Box>
   );
 }
