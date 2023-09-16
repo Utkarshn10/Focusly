@@ -69,7 +69,7 @@ function Homepage() {
   ];
 
   const handleShuffleClick = () =>{
-    setShuffleButtonClicked(!shuffleButtonClicked)
+    setShuffleButtonClicked(true)
   }
 
   return (
