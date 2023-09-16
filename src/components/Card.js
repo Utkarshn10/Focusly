@@ -98,6 +98,7 @@ const Card = (props, initialState = 0) => {
             _hover={{
               boxShadow: "2xl",
             }}
+            cursor="pointer"
           >
             <Box
               h={"180px"}
@@ -109,14 +110,15 @@ const Card = (props, initialState = 0) => {
               onClick={handlePlay}
             >
               <Image
-                p="20px"
+                p="5px"
                 alt="image"
                 w={"full"}
                 h={"full"}
                 src={props.image}
+                borderRadius='xl'
               />
               <Box d="flex" alignItems="baseline">
-                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                <Badge rounded="full" mt="2" px="2" fontSize="0.8em" colorScheme="red">
                   {props.tag}
                 </Badge>
               </Box>
@@ -142,6 +144,7 @@ const Card = (props, initialState = 0) => {
             _hover={{
               boxShadow: "3xl",
             }}
+            cursor="pointer"
           >
             <Box
               h={"180px"}

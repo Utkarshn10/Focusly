@@ -46,8 +46,8 @@ function Meditate() {
 
   return (
       <Box maxW={"100%"}>
-        <Box>
-        <Heading my={2}>New</Heading>  
+        <Box mt={4}>
+        <Heading mb={1}>New</Heading>  
           <Center>
           <SimpleGrid columns={[1, 2, 4]}>
             {newinfo && newinfo.map((post) => <Card key={post.id} {...post} />)}
