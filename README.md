@@ -33,7 +33,7 @@ Before cloning, please make sure you have already installed follownig:
 1. Fork the repository
 2. Clone the project
 3. Navigate to `cd Focusly`
-4. Install dependencies with  `npm install`
+4. Install dependencies with  `npm install --legacy-peer-deps`
 5. Run `npm start`
 
 ## Your Support means a lot
