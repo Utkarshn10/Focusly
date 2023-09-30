@@ -1,7 +1,10 @@
 <!-- markdownlint-disable MD003 -->
-<h1 align="center">Focusly</h1>
+<h1 align="center">Welcome to Focusly</h1>
 <!-- markdownlint-enable MD003 -->
 
+## Hacktoberfest 2023 🎉
+
+Focusly is excited to participate in Hacktoberfest, and we warmly welcome contributions from all participants! Whether you want to report an issue, submit a bug fix, or add a new feature, your contributions are highly appreciated. Happy Coding!
 
 ## Contribute directly using Gitpod
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Utkarshn10/Focusly)
