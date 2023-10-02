@@ -105,8 +105,8 @@ function Homepage() {
           cursor="pointer"
         >
           <svg
-            width="25px"
-            height="25px"
+            width="30px"
+            height="30px"
             stroke-width="1.5"
             viewBox="0 0 24 24"
             fill="none"
