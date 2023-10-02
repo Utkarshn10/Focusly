@@ -2,10 +2,10 @@ import React from "react";
 import {useState} from "react";
 import { Box, Center, Container, SimpleGrid, Button } from "@chakra-ui/react";
 import FocusSoundCard from "./FocusSoundCard";
+import { Tooltip } from '@chakra-ui/react'
 
 function Homepage() {
   const [shuffleButtonClicked,setShuffleButtonClicked] = useState(false)
-  const [isHovering, setIsHovering] = useState(false);
   const info = [
     {
       id: "1",
@@ -72,15 +72,6 @@ function Homepage() {
   const handleShuffleClick = () =>{
     setShuffleButtonClicked(!shuffleButtonClicked)
   }
-  const handleMouseOver = () => {
-    setIsHovering(true);
-    console.log(true)
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-    console.log(false)
-  };
   return (
     <>
       <Container maxW={"100%"} bg={"#EFEAD8"}>
@@ -96,64 +87,58 @@ function Homepage() {
       <Box
         position="fixed"
         bottom={4}
-        right={isHovering? 5: 14}
+        right={14}
         display="flex"
         justifyContent="flex-end"
       >
-        <Box
-          bg={"gray.400"}
-          variant="solid"
-          borderRadius="full"
-          py="2"
-          px="2"
-          alignSelf="center"
-          onClick={()=>handleShuffleClick()}
-          onMouseOver={() => handleMouseOver()}
-          onMouseOut={() => handleMouseOut()}
-          // purple
-          // bgGradient="linear(to top, #9795f0 0%, #fbc8d4 100%)"
-          //teal
-          bgGradient="linear(-225deg, #B7F8DB 0%, #50A7C2 100%)"
-          cursor="pointer"
-        >
-          <svg
-            width="35px"
-            height="35px"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            color="#000000"
-          >
-            <path
-              d="M22 7c-3 0-8.5 0-10.5 5.5S5 18 2 18"
-              stroke="#000000"
+        <Tooltip label='Surprise Me ✨'>
+          <Box
+            bg={"gray.400"}
+            variant="solid"
+              borderRadius="full"
+              py="2"
+              px="2"
+              alignSelf="center"
+              onClick={()=>handleShuffleClick()}
+              // purple
+              // bgGradient="linear(to top, #9795f0 0%, #fbc8d4 100%)"
+              //teal
+              bgGradient="linear(-225deg, #B7F8DB 0%, #50A7C2 100%)"
+              cursor="pointer"
+            >
+            <svg
+              width="35px"
+              height="35px"
               stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M20 5l2 2-2 2M22 18c-3 0-8.5 0-10.5-5.5S5 7 2 7"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M20 20l2-2-2-2"
-              stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </Box>
-         {isHovering &&
-        <Box color="F1EFEF"
-        p={1}>
-        Surprise Me ✨
-        </Box>
-        }
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="#000000"
+            >
+              <path
+                d="M22 7c-3 0-8.5 0-10.5 5.5S5 18 2 18"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M20 5l2 2-2 2M22 18c-3 0-8.5 0-10.5-5.5S5 7 2 7"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M20 20l2-2-2-2"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </Box>
+        </Tooltip>
       </Box>
     </>
   );
