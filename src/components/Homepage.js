@@ -74,10 +74,12 @@ function Homepage() {
   }
   const handleMouseOver = () => {
     setIsHovering(true);
+    console.log(true)
   };
 
   const handleMouseOut = () => {
     setIsHovering(false);
+    console.log(false)
   };
   return (
     <>
@@ -93,10 +95,9 @@ function Homepage() {
       </Container>
       <Box
         position="fixed"
-        bottom={6}
-        right={isHovering? 5: 14} //14 
+        bottom={4}
+        right={isHovering? 5: 14}
         display="flex"
-        flexDirection="column"
         justifyContent="flex-end"
       >
         <Box
@@ -116,8 +117,8 @@ function Homepage() {
           cursor="pointer"
         >
           <svg
-            width="25px"
-            height="25px"
+            width="35px"
+            height="35px"
             stroke-width="1.5"
             viewBox="0 0 24 24"
             fill="none"
@@ -147,12 +148,12 @@ function Homepage() {
             ></path>
           </svg>
         </Box>
-        {isHovering &&
+         {isHovering &&
         <Box color="F1EFEF"
         p={1}>
         Surprise Me ✨
         </Box>
-    }
+        }
       </Box>
     </>
   );
