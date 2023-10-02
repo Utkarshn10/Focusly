@@ -98,7 +98,6 @@ function Homepage() {
               borderRadius="full"
               py="2"
               px="2"
-              alignSelf="center"
               onClick={()=>handleShuffleClick()}
               // purple
               // bgGradient="linear(to top, #9795f0 0%, #fbc8d4 100%)"
