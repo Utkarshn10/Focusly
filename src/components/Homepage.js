@@ -5,6 +5,7 @@ import FocusSoundCard from "./FocusSoundCard";
 
 function Homepage() {
   const [shuffleButtonClicked,setShuffleButtonClicked] = useState(false)
+  const [isHovering, setIsHovering] = useState(false);
   const info = [
     {
       id: "1",
@@ -71,7 +72,13 @@ function Homepage() {
   const handleShuffleClick = () =>{
     setShuffleButtonClicked(!shuffleButtonClicked)
   }
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
 
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
   return (
     <>
       <Container maxW={"100%"} bg={"#EFEAD8"}>
@@ -86,9 +93,10 @@ function Homepage() {
       </Container>
       <Box
         position="fixed"
-        bottom={4}
-        right={14}
+        bottom={6}
+        right={isHovering? 5: 14} //14 
         display="flex"
+        flexDirection="column"
         justifyContent="flex-end"
       >
         <Box
@@ -97,7 +105,10 @@ function Homepage() {
           borderRadius="full"
           py="2"
           px="2"
+          alignSelf="center"
           onClick={()=>handleShuffleClick()}
+          onMouseOver={() => handleMouseOver()}
+          onMouseOut={() => handleMouseOut()}
           // purple
           // bgGradient="linear(to top, #9795f0 0%, #fbc8d4 100%)"
           //teal
@@ -105,8 +116,8 @@ function Homepage() {
           cursor="pointer"
         >
           <svg
-            width="35px"
-            height="35px"
+            width="25px"
+            height="25px"
             stroke-width="1.5"
             viewBox="0 0 24 24"
             fill="none"
@@ -136,6 +147,12 @@ function Homepage() {
             ></path>
           </svg>
         </Box>
+        {isHovering &&
+        <Box color="F1EFEF"
+        p={1}>
+        Surprise Me ✨
+        </Box>
+    }
       </Box>
     </>
   );
