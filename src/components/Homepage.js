@@ -66,6 +66,12 @@ function Homepage() {
       sound: "./sound/brownnoise.mp3",
       tag: "Brown noise",
     },
+    {
+      id:"12" ,  //Coffee charter sound
+      image:"./image/coffee.webp",
+      sound:"./sound/coffee-shop-chatter.mp3",
+      tag:"Focus",
+    },
   ];
 
   const handleShuffleClick = () =>{
