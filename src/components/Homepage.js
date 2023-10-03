@@ -70,7 +70,7 @@ function Homepage() {
       id:"12" ,  //Coffee charter sound
       image:"./image/coffee.webp",
       sound:"./sound/coffee-shop-chatter.mp3",
-      tag:"Focus",
+      tag:"Coffee Shop",
     },
   ];
 
