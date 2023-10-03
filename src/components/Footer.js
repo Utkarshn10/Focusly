@@ -23,7 +23,7 @@ const Footer = () => {
             Follow for regular updates
           </Text>
 
-          <Flex direction={isMobile ? "column" : "row"} alignItems="center">
+          <Flex direction="row" alignItems="center"> {/* Always display icons in a row */}
             <Link href="https://twitter.com/Focusly_app">
               <Image
                 src="../X_logo-bg-removed.png"
@@ -31,8 +31,7 @@ const Footer = () => {
                 maxW={isMobile ? "70px" : "90px"}
                 borderRadius="full"
                 alt="Twitter logo"
-                mr={isMobile ? 0 : 2}
-                mb={isMobile ? 2 : 0}  // Added margin at the bottom for mobile view
+                ml={12} // Add margin between icons
               />
             </Link>
 
