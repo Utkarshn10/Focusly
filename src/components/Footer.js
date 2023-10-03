@@ -6,26 +6,24 @@ const Footer = () => {
 
   return (
     <Container maxW="100%" bg="#f7f7f7" borderTopRadius="50px" borderBottomWidth='6px' borderColor='teal'>
-      <Flex justifyContent="space-between" alignItems="center" mr={39} p={10}>
+      <Flex direction={isMobile ? "column" : "row"} alignItems={isMobile ? "center" : "flex-start"} justifyContent="space-between" p={10}>
         <Link href="https://focusly.vercel.app/">
           <Image
             src="../Focusly_logo-bg-removed.png"
-            boxSize={isMobile ? "50px" : "70px"}
+            boxSize={isMobile ? "80px" : "100px"}  // Adjusted logo size for desktop view
             maxW={isMobile ? "80px" : "100px"}
             borderRadius="full"
             alt="Focusly logo"
-            ml={isMobile ? 0 : 4}
+            mb={isMobile ? 2 : 0}  // Added margin at the bottom for mobile view
           />
         </Link>
 
-        <Flex flexDirection="column" alignItems="center" ml={5}>
-          <Box mb={2}>
-            <Text fontSize="sm">
-              Follow for regular updates
-            </Text>
-          </Box>
+        <Box ml={isMobile ? 0 : 4}>
+          <Text fontSize="sm" mb={2}>
+            Follow for regular updates
+          </Text>
 
-          <Flex>
+          <Flex direction={isMobile ? "column" : "row"} alignItems="center">
             <Link href="https://twitter.com/Focusly_app">
               <Image
                 src="../X_logo-bg-removed.png"
@@ -33,10 +31,12 @@ const Footer = () => {
                 maxW={isMobile ? "70px" : "90px"}
                 borderRadius="full"
                 alt="Twitter logo"
+                mr={isMobile ? 0 : 2}
+                mb={isMobile ? 2 : 0}  // Added margin at the bottom for mobile view
               />
             </Link>
 
-            <Link href="https://github.com/Utkarshn10/Focusly" ml={2}>
+            <Link href="https://github.com/Utkarshn10/Focusly">
               <Image
                 src="../Github_logo-bg-removed.png"
                 boxSize={isMobile ? "40px" : "60px"}
@@ -46,7 +46,7 @@ const Footer = () => {
               />
             </Link>
           </Flex>
-        </Flex>
+        </Box>
         {/* <PopupButton
           id="pmedcZ7N"
           style={buttonStyle}
@@ -54,7 +54,7 @@ const Footer = () => {
         >
           <span style={{ marginLeft: 10 }}>🌱 Give Your Valuable Feedback</span>
         </PopupButton> */}
-{/* <Link justifySelf="end" borderWidth='2px' borderColor='teal' py={2} px={2} borderRadius='6px' href="https://github.com/sponsors/Utkarshn10">Support Focusly</Link> */ }
+        {/* <Link justifySelf="end" borderWidth='2px' borderColor='teal' py={2} px={2} borderRadius='6px' href="https://github.com/sponsors/Utkarshn10">Support Focusly</Link> */}
       </Flex>
     </Container>
   );
