@@ -34,6 +34,12 @@ import {
 import Sound from "react-sound";
 import { MyContext } from "../context";
 
+const gradientBorder = {
+  border: "8px solid transparent",
+  borderImage: "linear-gradient(to bottom right, #3c1444, #d0595d)",
+  borderImageSlice: 1,
+};
+
 const renderLoader = () => <Spinner />;
 
 const soundStatus = {
@@ -51,12 +57,12 @@ const FocusSoundCard = (props, initialState = 0) => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState([]);
 
   const shuffleSounds = () => {
-    let playingSounds = []
+    let playingSounds = [];
 
     for (let cnt = 0; cnt < 3; cnt++) {
       var val = Math.floor(Math.random() * (10 - 1 + 1) + 1);
       if (index == val) {
-        playingSounds.push(index)
+        playingSounds.push(index);
         handlePlay();
       }
     }
@@ -111,7 +117,7 @@ const FocusSoundCard = (props, initialState = 0) => {
         <Center py={6} px={4}>
           <Box
             maxW={"320px"}
-            border="0.5px"
+            border="1px"
             borderRadius={"2xl"}
             w="full"
             bg={"white"}
@@ -121,6 +127,7 @@ const FocusSoundCard = (props, initialState = 0) => {
               boxShadow: "2xl",
             }}
             cursor="pointer"
+            sx={gradientBorder}
           >
             <Box
               h={"180px"}

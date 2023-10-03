@@ -32,6 +32,12 @@ import {
 import Sound from "react-sound";
 import { MyContext } from "../context";
 
+const gradientBorder = {
+  border: "8px solid transparent",
+  borderImage: "linear-gradient(to bottom right, #3c1444, #d0595d)",
+  borderImageSlice: 1,
+};
+
 const renderLoader = () => <Spinner />;
 
 const soundStatus = {
@@ -99,6 +105,7 @@ const Card = (props, initialState = 0) => {
               boxShadow: "2xl",
             }}
             cursor="pointer"
+            sx={gradientBorder}
           >
             <Box
               h={"180px"}
@@ -115,10 +122,16 @@ const Card = (props, initialState = 0) => {
                 w={"full"}
                 h={"full"}
                 src={props.image}
-                borderRadius='xl'
+                borderRadius="xl"
               />
               <Box d="flex" alignItems="baseline">
-                <Badge rounded="full" mt="2" px="2" fontSize="0.8em" colorScheme="red">
+                <Badge
+                  rounded="full"
+                  mt="2"
+                  px="2"
+                  fontSize="0.8em"
+                  colorScheme="red"
+                >
                   {props.tag}
                 </Badge>
               </Box>
