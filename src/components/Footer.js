@@ -27,8 +27,8 @@ const Footer = () => {
             <Link href="https://twitter.com/Focusly_app">
               <Image
                 src="../X_logo-bg-removed.png"
-                boxSize={isMobile ? "40px" : "60px"}
-                maxW={isMobile ? "70px" : "90px"}
+                boxSize={isMobile ? "40px" : "50px"}
+                maxW={isMobile ? "70px" : "75px"}
                 borderRadius="full"
                 alt="Twitter logo"
                 ml={12} // Add margin between icons
@@ -38,8 +38,8 @@ const Footer = () => {
             <Link href="https://github.com/Utkarshn10/Focusly">
               <Image
                 src="../Github_logo-bg-removed.png"
-                boxSize={isMobile ? "40px" : "60px"}
-                maxW={isMobile ? "70px" : "90px"}
+                boxSize={isMobile ? "40px" : "50px"}
+                maxW={isMobile ? "70px" : "75px"}
                 borderRadius="full"
                 alt="GitHub logo"
               />
