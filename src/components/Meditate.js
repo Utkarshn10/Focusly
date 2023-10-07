@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import {Box, Center,Heading, SimpleGrid} from "@chakra-ui/react";
 import Card from "./Card";
 
 function Meditate() {
+
+  const [currentSong, setCurrentSong] = useState(null);
   const [newinfo,setnewInfo] = useState([
     {
       id: "1",
@@ -50,7 +52,7 @@ function Meditate() {
         <Heading mb={1}>New</Heading>  
           <Center>
           <SimpleGrid columns={[1, 2, 4]}>
-            {newinfo && newinfo.map((post) => <Card key={post.id} {...post} />)}
+            {newinfo && newinfo.map((post) => <Card key={post.id} {...post} currentSong={currentSong} setCurrentSong={setCurrentSong} multi={false}/>)}
           </SimpleGrid>
           </Center>
         </Box>
@@ -59,7 +61,7 @@ function Meditate() {
 
         <Center>
           <SimpleGrid columns={[1, 2, 4]}>
-            {info && info.map((post) => <Card key={post.id} {...post} />)}
+            {info && info.map((post) => <Card key={post.id} {...post} currentSong={currentSong} setCurrentSong={setCurrentSong} multi={false}/>)}
           </SimpleGrid>
         </Center>
         </Box>

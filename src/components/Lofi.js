@@ -3,6 +3,7 @@ import { Box, Center, SimpleGrid } from "@chakra-ui/react";
 import Card from "./Card";
 
 export default function Lofi() {
+  const [currentSong, setCurrentSong] = useState(null);
   const [info, setinfo] = useState([
     {
       id: "1",
@@ -70,7 +71,7 @@ export default function Lofi() {
     <Box maxW={"100%"}>
       <Center>
         <SimpleGrid columns={[1, 2, 3]}>
-          {info && info.map((post) => <Card key={post.id} {...post} />)}
+          {info && info.map((post) => <Card key={post.id} {...post} currentSong={currentSong} setCurrentSong={setCurrentSong} multi={false}/>)}
         </SimpleGrid>
       </Center>
     </Box>

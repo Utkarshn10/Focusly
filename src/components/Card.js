@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useContext, useRef } from "react";
+import React, { Suspense, useState, useContext, useRef,useEffect } from "react";
 import {
   BsFillPlayFill,
   BsPauseFill,
@@ -76,12 +76,22 @@ const Card = (props, initialState = 0) => {
   const handlePlay = () => {
     setSoundStatus({ ...soundStatus, playing: !playing });
     !isActive && !isPaused ? handleStart() : handlePause();
+    props.setCurrentSong(props.sound);
   };
 
   const handlePauseCard = () => {
     setSoundStatus({ ...soundStatus, playing: true, paused: !paused });
     isPaused ? handlePause() : handleResume();
   };
+
+
+  useEffect(() => {
+    if(props.currentSong !== props.sound && playing && props.multi===false){
+      setSoundStatus({ ...soundStatus, playing: !playing });
+    !isActive && !isPaused ? handleStart() : handlePause();
+    }
+  }, [props.currentSong]);
+
 
   if (!playing) {
     return (
