@@ -46,7 +46,7 @@ OR
 ## Your Support means a lot
 
 
-Give a ⭐ to show support to the project if this project helped you or you like it.
+Give a ⭐ to show support for the project.
 
 ## Thanks to all Contributors 💪
 
