@@ -4,7 +4,7 @@ import Card from "./Card";
 
 function Meditate() {
 
-  const [currentSong, setCurrentSong] = useState(null);
+  const [currentSong, setCurrentSong] = useState(null);             //tracks the current song
   const [newinfo,setnewInfo] = useState([
     {
       id: "1",

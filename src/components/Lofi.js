@@ -3,7 +3,7 @@ import { Box, Center, SimpleGrid } from "@chakra-ui/react";
 import Card from "./Card";
 
 export default function Lofi() {
-  const [currentSong, setCurrentSong] = useState(null);
+  const [currentSong, setCurrentSong] = useState(null);       //tracks the current song
   const [info, setinfo] = useState([
     {
       id: "1",

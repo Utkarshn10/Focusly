@@ -76,7 +76,7 @@ const Card = (props, initialState = 0) => {
   const handlePlay = () => {
     setSoundStatus({ ...soundStatus, playing: !playing });
     !isActive && !isPaused ? handleStart() : handlePause();
-    props.setCurrentSong(props.sound);
+    props.setCurrentSong(props.sound);                    //set the current song to the song being clicked
   };
 
   const handlePauseCard = () => {
@@ -84,9 +84,9 @@ const Card = (props, initialState = 0) => {
     isPaused ? handlePause() : handleResume();
   };
 
-
+  //this block checks if the current song is the same as the song in the card
   useEffect(() => {
-    if(props.currentSong !== props.sound && playing && props.multi===false){
+    if(props.currentSong !== props.sound && playing && props.multi===false){  //if not then toggle the status
       setSoundStatus({ ...soundStatus, playing: !playing });
     !isActive && !isPaused ? handleStart() : handlePause();
     }
