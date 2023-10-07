@@ -3,6 +3,7 @@ import { Box, Center, SimpleGrid } from "@chakra-ui/react";
 import Card from "./Card";
 
 export default function Lofi() {
+  const [currentAudio, setCurrentAudio] = useState(null);       //tracks the current song
   const [info, setinfo] = useState([
     {
       id: "1",
@@ -70,7 +71,7 @@ export default function Lofi() {
     <Box maxW={"100%"}>
       <Center>
         <SimpleGrid columns={[1, 2, 3]}>
-          {info && info.map((post) => <Card key={post.id} {...post} />)}
+          {info && info.map((post) => <Card key={post.id} {...post} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} multi={false}/>)}
         </SimpleGrid>
       </Center>
     </Box>
