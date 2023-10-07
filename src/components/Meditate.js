@@ -4,7 +4,7 @@ import Card from "./Card";
 
 function Meditate() {
 
-  const [currentSong, setCurrentSong] = useState(null);             //tracks the current song
+  const [currentAudio, setCurrentAudio] = useState(null);             //tracks the current song
   const [newinfo,setnewInfo] = useState([
     {
       id: "1",
@@ -52,7 +52,7 @@ function Meditate() {
         <Heading mb={1}>New</Heading>  
           <Center>
           <SimpleGrid columns={[1, 2, 4]}>
-            {newinfo && newinfo.map((post) => <Card key={post.id} {...post} currentSong={currentSong} setCurrentSong={setCurrentSong} multi={false}/>)}
+            {newinfo && newinfo.map((post) => <Card key={post.id} {...post} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} multi={false}/>)}
           </SimpleGrid>
           </Center>
         </Box>
@@ -61,7 +61,7 @@ function Meditate() {
 
         <Center>
           <SimpleGrid columns={[1, 2, 4]}>
-            {info && info.map((post) => <Card key={post.id} {...post} currentSong={currentSong} setCurrentSong={setCurrentSong} multi={false}/>)}
+            {info && info.map((post) => <Card key={post.id} {...post} currentAudio={currentAudio} setCurrentAudio={setCurrentAudio} multi={false}/>)}
           </SimpleGrid>
         </Center>
         </Box>
