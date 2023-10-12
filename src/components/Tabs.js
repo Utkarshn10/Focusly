@@ -17,9 +17,6 @@ function TabPanel() {
                         <NavLink to="/Lofi">
                             <Tab borderRadius={theme.radii.lg}>Lo-Fi</Tab>
                         </NavLink>
-                        <NavLink to="/Meditate">
-                            <Tab borderRadius={theme.radii.lg}>Meditate</Tab>
-                        </NavLink>
                     </TabList>
                 </Tabs>
             </Box>

@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ChakraProvider, Container } from "@chakra-ui/react";
 import Homepage from "./components/Homepage";
-import Meditate from "./components/Meditate";
 import Lofi from "./components/Lofi";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tabs from "./components/Tabs";
@@ -23,7 +22,6 @@ function App() {
               <Tabs />
               <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/Meditate" element={<Meditate />} />
                 <Route path="/Lofi" element={<Lofi />} />
               </Routes>
             </BrowserRouter>
