@@ -91,9 +91,10 @@ function Homepage() {
         </Box>
       </Container>
       <Box
-        position="fixed"
-        bottom={4}
-        right={14}
+        position="sticky"
+        bottom={8}
+        marginRight={[4,6,8]}
+        marginBottom={[2,4]}
         display="flex"
         justifyContent="flex-end"
       >
