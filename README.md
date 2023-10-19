@@ -53,3 +53,9 @@ Give a ⭐ to show support for the project.
 Thanks a lot for contributing to Focusly.
 
 [![Contributors](https://contrib.rocks/image?repo=Utkarshn10/Focusly)](https://github.com/Utkarshn10/Focusly/graphs/contributors)
+
+
+## Translations 
+
+Ukrainian Language / Українська мова: [link](https://github.com/Utkarshn10/Focusly/blob/master/README.ukrainian.md)
+
