@@ -41,7 +41,7 @@ Before cloning, please make sure you have already installed follownig:
 
 OR
 
-1. You can directly go to this [Gitpod link](https://gitpod.io/#https://github.com/Utkarshn10/Focusly) and it will automatically set it up the environment for you. 
+1. You can directly go to this [Gitpod link](https://gitpod.io/#https://github.com/Utkarshn10/Focusly) and it will automatically set up the environment for you. 
 
 ## Your Support means a lot
 
