@@ -1,11 +1,11 @@
 import React from "react";
-import {useState} from "react";
+import { useState } from "react";
 import { Box, Center, Container, SimpleGrid, Button } from "@chakra-ui/react";
 import FocusSoundCard from "./FocusSoundCard";
-import { Tooltip } from '@chakra-ui/react'
+import { Tooltip } from "@chakra-ui/react";
 
 function Homepage() {
-  const [shuffleButtonClicked,setShuffleButtonClicked] = useState(false)
+  const [shuffleButtonClicked, setShuffleButtonClicked] = useState(false);
   const info = [
     {
       id: "1",
@@ -68,24 +68,31 @@ function Homepage() {
       tag: "Brown noise",
     },
     {
-      id:"12" ,  //Coffee charter sound
-      image:"./image/coffee.webp",
-      sound:"./sound/coffee-shop-chatter.mp3",
-      tag:"Coffee Shop",
+      id: "12", //Coffee charter sound
+      image: "./image/coffee.webp",
+      sound: "./sound/coffee-shop-chatter.mp3",
+      tag: "Coffee Shop",
     },
   ];
 
-  const handleShuffleClick = () =>{
-    setShuffleButtonClicked(!shuffleButtonClicked)
-  }
+  const handleShuffleClick = () => {
+    setShuffleButtonClicked(!shuffleButtonClicked);
+  };
   return (
     <>
-      <Container maxW={"100%"} bg={"#EFEAD8"}>
+      <Container maxW={"100%"} marginTop={"105px"} bg={"#EFEAD8"}>
         <Box maxW={"100%"}>
           <Center>
             <SimpleGrid columns={[1, 2, 4]}>
               {info &&
-                info.map((post) => <FocusSoundCard key={post.id} index={post.id} {...post} shuffleButtonClicked={shuffleButtonClicked} />)}
+                info.map((post) => (
+                  <FocusSoundCard
+                    key={post.id}
+                    index={post.id}
+                    {...post}
+                    shuffleButtonClicked={shuffleButtonClicked}
+                  />
+                ))}
             </SimpleGrid>
           </Center>
         </Box>
@@ -93,25 +100,25 @@ function Homepage() {
       <Box
         position="sticky"
         bottom={8}
-        marginRight={[4,6,8]}
-        marginBottom={[2,4]}
+        marginRight={[4, 6, 8]}
+        marginBottom={[2, 4]}
         display="flex"
         justifyContent="flex-end"
       >
-        <Tooltip label='Surprise Me ✨'>
+        <Tooltip label="Surprise Me ✨">
           <Box
             bg={"gray.400"}
             variant="solid"
-              borderRadius="full"
-              py="2"
-              px="2"
-              onClick={()=>handleShuffleClick()}
-              // purple
-              // bgGradient="linear(to top, #9795f0 0%, #fbc8d4 100%)"
-              //teal
-              bgGradient="linear(-225deg, #B7F8DB 0%, #50A7C2 100%)"
-              cursor="pointer"
-            >
+            borderRadius="full"
+            py="2"
+            px="2"
+            onClick={() => handleShuffleClick()}
+            // purple
+            // bgGradient="linear(to top, #9795f0 0%, #fbc8d4 100%)"
+            //teal
+            bgGradient="linear(-225deg, #B7F8DB 0%, #50A7C2 100%)"
+            cursor="pointer"
+          >
             <svg
               width="35px"
               height="35px"
