@@ -1,11 +1,21 @@
 import React from "react";
 import { useState } from "react";
-import { Box, Center, Container, SimpleGrid, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Container,
+  SimpleGrid,
+  Button,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import FocusSoundCard from "./FocusSoundCard";
 import { Tooltip } from "@chakra-ui/react";
 
 function Homepage() {
   const [shuffleButtonClicked, setShuffleButtonClicked] = useState(false);
+
+  const marginTopOnMobile = useBreakpointValue({ base: "105px", md: "0" });
+
   const info = [
     {
       id: "1",
@@ -80,9 +90,9 @@ function Homepage() {
   };
   return (
     <>
-      <Container maxW={"100%"} marginTop={"105px"} bg={"#EFEAD8"}>
+      <Container maxW={"100%"} bg={"#EFEAD8"}>
         <Box maxW={"100%"}>
-          <Center>
+          <Center marginTop={marginTopOnMobile}>
             <SimpleGrid columns={[1, 2, 4]}>
               {info &&
                 info.map((post) => (
