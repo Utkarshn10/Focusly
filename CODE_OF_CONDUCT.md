@@ -126,3 +126,7 @@ enforcement ladder](https://github.com/mozilla/diversity).
 For answers to common questions about this code of conduct, see the FAQ at
 https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
+
+## Translations
+
+Ukrainian Language / Українська мова: [link](https://github.com/Utkarshn10/Focusly/blob/master/CODE_OF_CONDUCT.ukrainian.md)

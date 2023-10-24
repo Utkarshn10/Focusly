@@ -66,6 +66,9 @@ $ git commit -m "message"
 - Go to your repository in the browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution.
 - Create a Pull Request by clicking on the "Create pull request" button
 
+## Translations
+
+Ukrainian Language / Українська мова: [link](https://github.com/Utkarshn10/Focusly/blob/master/CONTRIBUTING.ukrainian.md)
 
 
 
