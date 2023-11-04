@@ -56,7 +56,7 @@ const Footer = () => {
             </Link>
             <Link href="https://github.com/Utkarshn10/Focusly">
               <Image
-                src="../GitHub_logo-bg-removed.png"
+                src="../Github_logo-bg-removed.png"
                 boxSize={isMobile ? "40px" : "40px"}
                 maxW={isMobile ? "70px" : "70px"}
                 borderRadius="full"
